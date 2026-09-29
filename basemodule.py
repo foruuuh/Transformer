@@ -25,6 +25,7 @@ class Embedding(nn.Module):
         mean, std = 0, 1
         nn.init.normal_(self.embed, mean = mean, std = std, a = -3*std, b = 3 * std)
 
+
     def forward(self, token_ids: torch.Tensor) -> torch.Tensor:
         # 查找token_ids对应的embedding向量
         return self.embed[token_ids]
